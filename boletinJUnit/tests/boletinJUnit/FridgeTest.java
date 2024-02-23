@@ -29,8 +29,8 @@ public class FridgeTest {
 	
 	@ParameterizedTest(name = "Meter {0}")
 	@ValueSource(strings = {"bread", "cheese", "ham"})
-	void testAddMultipleFoods(String alimento) {
-		assertTrue(fridge.put(alimento));
+	void testAddMultipleFoods(String food) {
+		assertTrue(fridge.put(food));
 	}
 	
 	@Test

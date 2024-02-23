@@ -24,7 +24,9 @@ public class AccountTest2 {
     @Test
     public void testDecimalFailure() {
     	float balance = account.getBalance();
-    	for (int i = 0; i < 100; i++) balance += 0.23F;
+    	for (int i = 0; i < 100; i++) {
+			balance += 0.23F;
+		}
     	assertNotEquals(balance, 623F);
     	assertEquals(balance, 622.99805F);
     }

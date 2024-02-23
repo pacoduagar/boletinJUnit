@@ -41,27 +41,27 @@ public class AccountTest {
 		assertThat(account, notNullValue());
 	}
 	
-	@ParameterizedTest(name = "Ingresar +{0}€")
+	@ParameterizedTest(name = "Add +{0}€")
 	@MethodSource("amounts")
 	void testPositiveBalance(float amount) {
 		assertTrue(account.deposit(amount));
 		assertEquals(account.getBalance(), initialBalance + amount);
 	}
 	
-	@ParameterizedTest(name = "Ingresar -{0}€")
+	@ParameterizedTest(name = "Add -{0}€")
 	@MethodSource("amounts")
 	void testNegativeBalance(float amount) {
 		assertFalse(account.deposit(-amount));
 		assertEquals(account.getBalance(), initialBalance);
 	}
 	
-	@ParameterizedTest(name = "Retirar +{0}€ con tarifa")
+	@ParameterizedTest(name = "Remove +{0}€ fee")
 	@MethodSource("amounts")
 	void testRemovePositive(float amount) {
 		assertTrue(account.withdraw(amount, fee));
 	}
 	
-	@ParameterizedTest(name = "Retirar -{0}€ con tarifa")
+	@ParameterizedTest(name = "Remove -{0}€ fee")
 	@MethodSource("amounts")
 	void testRemoveNegtive(float amount) {
 		assertFalse(account.withdraw(-amount, fee));

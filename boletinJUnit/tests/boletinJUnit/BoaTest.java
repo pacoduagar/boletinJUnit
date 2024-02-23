@@ -52,8 +52,8 @@ public class BoaTest {
 
     static Stream<Arguments> boas() {
         return Stream.of(
-    		Arguments.of("linea", 4, "canuto", false),
-    		Arguments.of("honor", 9, "gloria", true)
+    		Arguments.of("line", 4, "food1", false),
+    		Arguments.of("ball", 9, "food2", true)
     	);
     }
 
