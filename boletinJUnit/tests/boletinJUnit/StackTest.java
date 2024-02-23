@@ -7,9 +7,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -29,10 +26,12 @@ public class StackTest {
 		stack = null;
 	}
 	
-	@ParameterizedTest
-	@ValueSource(ints = {0, 2, 10, 20, 23})
-	void testAdd(int num) {
-		stack.push(num);
+	@Test
+	void testAdd() {
+		int[] numbers = {0, 2, 10, 20, 23};
+        for (int num : numbers) {
+            stack.push(num);
+        	}
 	}
 	
 	@Test
